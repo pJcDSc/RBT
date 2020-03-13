@@ -36,6 +36,8 @@ int main() {
   }
 
   delete rbt;
+
+  cout << "Bye!" << endl;
 }
 
 //parse input call functions
@@ -82,6 +84,7 @@ void addNode(RBT* rbt) {
   cin.clear();
   cin.ignore(999, '\n');
   rbt -> addNode(n);
+  cout << "Added " << n << " to tree" << endl;
 }
 
 //Read from file, split by space, call addnode on each
@@ -95,11 +98,13 @@ void addFile(RBT* rbt) {
   cout << "Reading from \"" << fileName << "\"" << endl;
   ifstream fileStream(fileName);
   if (fileStream.is_open()) {
-    fileStream.getline(line,99);
+    fileStream.getline(line,999);
   } else {
     cout << "Could not read from file" << endl;
     return;
   }
+
+  cout << "Added numbers to tree" << endl;
   fileStream.close();
 
   char* build = new char[strlen(line)+1]();
